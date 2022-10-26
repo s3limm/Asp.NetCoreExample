@@ -1,0 +1,7 @@
+﻿@using Asp.NetCore_Example.Models
+
+<ul>
+    @foreach (User item in ViewData["Users"] as List<User>)
+    {
+        <li>@item.FirstName @item.LastName</li>}
+</ul>

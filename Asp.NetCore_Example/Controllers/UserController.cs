@@ -6,7 +6,15 @@ namespace Asp.NetCore_Example.Controllers
 {
     public class UserController : Controller
     {
-        public IActionResult UseViewBag()
+        List<User> users = new List<User>() //Method 3
+            {
+                new User() {FirstName = "Yavuz",LastName = "Emrem"},
+                new User() {FirstName = "İnci",LastName = "Emrem"},
+                new User() {FirstName = "Kayra",LastName = "Şahin"},
+                new User() {FirstName = "Jale",LastName = "Emrem"},
+            };
+
+        public IActionResult UseViewData()
         {
 
             ViewBag.User = "Yavuz"; //Method 1 
@@ -16,16 +24,7 @@ namespace Asp.NetCore_Example.Controllers
             user.LastName = "Emrem";
             ViewBag.UserName = user;
 
-
-
-            List<User> users = new List<User>() //Method 3
-            {
-                new User() {FirstName = "Yavuz",LastName = "Emrem"},
-                new User() {FirstName = "İnci",LastName = "Emrem"},
-                new User() {FirstName = "Kayra",LastName = "Şahin"},
-                new User() {FirstName = "Jale",LastName = "Emrem"},
-            };
-            ViewBag.Users = users;
+            ViewData["Users"] = users;        
 
             return View();
         }
