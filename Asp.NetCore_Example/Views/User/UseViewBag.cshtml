@@ -1,0 +1,15 @@
+﻿@using Asp.NetCore_Example.Models
+
+<ul>
+
+    @foreach (User item in ViewBag.Users)
+    {
+        <li>@item.FirstName @item.LastName</li>
+    }
+
+</ul>
+
+
+<p>Merhaba @ViewBag.UserName.FirstName  @ViewBag.UserName.LastName</p>
+
+<p>Merhaba @ViewBag.User</p>
