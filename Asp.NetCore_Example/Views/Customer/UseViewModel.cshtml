@@ -1,0 +1,26 @@
+﻿@using Asp.NetCore_Example.Models
+@using Asp.NetCore_Example.Models.ViewModel
+@model CustomerAndProductVM
+
+<p>Müşteriler</p>
+
+@foreach (Customer müşteri in Model.customers)
+{
+    <li> @müşteri.FirstName @müşteri.LastName</li>
+}
+
+<p>
+    Ürün : @Model.products.name
+</p>
+
+<p>
+    Fiyat : @Model.products.price
+</p>
+
+<p>
+    Kategori : @Model.products.category
+</p>
+
+<p>
+    Tarih : @Model.date
+</p>
