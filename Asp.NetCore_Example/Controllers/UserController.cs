@@ -28,5 +28,18 @@ namespace Asp.NetCore_Example.Controllers
 
             return View();
         }
+
+
+        public IActionResult UseTempData()
+        {
+            TempData["name"] = "yavuz";
+            return RedirectToAction("TempDatatest");
+        }
+
+        public IActionResult TempDataTest()
+        {
+            TempData.Keep("name");
+            return View();
+        }
     }
 }
